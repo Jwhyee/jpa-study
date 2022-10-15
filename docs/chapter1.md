@@ -53,3 +53,48 @@ list.add(album);
 
 ### JPA를 통한 해결
 > 위와 같은 패러다임의 불일치 문제를 JPA가 해결해준다.
+```java
+// 실행한 JPA문
+jpa.persist(album);
+```
+```sql
+-- 실행되는 SQL문
+INSERT INTO ITEM ...
+INSERT INTO ALBUM ...
+```
+```java
+// 실행한 JPA문
+String albumId = "id100";
+Album album = jpa.find(Album.class, albumId);
+```
+```sql
+-- 실행되는 SQL문
+SELECT I.*, A.*
+    FROM ITEM I
+    JOIN ALBUM A ON I.ITEM_ID = A.ITEM_ID
+```
+> 객체는 `참조`를 사용해서 연관된 객체를 조회한다.<br>
+> 테이블은 `외래키`를 통한 `조인`을 사용해서 연관된 테이블을 조회한다.
+
+### 연관 관계를 통해 살펴보기
+```java
+@Getter @Setter
+public class Member {
+    ...
+    private Team team;
+}
+
+@Getter @Setter
+public class Team {
+    ...
+}
+```
+> `Member` 객체는 `Member.team` 필드에 `Team` 객체의 **참조**를 **보관**하여 Team 객체와 **관계**를 맺는다.
+
+```sql
+SELECT M.*, T.*
+    FROM MEMBER M
+    JOIN TEAM T ON M.TEAM_ID = T.TEAM_ID
+```
+> Member 테이블은 MEMBER.TEAM_ID 외래키 컬럼을 사용해서 TEAM 테이블과 관계를 맺는다.<br>
+> 이 외래키를 사용해서 MEMBER 테이블과 TEAM 테이블을 조인하면 MEMBER와 연관된 TEAM 테이블을 조회할 수 있다.
