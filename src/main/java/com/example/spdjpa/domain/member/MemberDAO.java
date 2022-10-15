@@ -1,18 +1,15 @@
 package com.example.spdjpa.domain.member;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MemberDAO {
     Connection con;
-    Statement stmt;
+    PreparedStatement stmt;
     ResultSet rs;
 
     public Member find(String memberId) throws SQLException {
         String sql = "SELECT MEMBER_ID, NAME FROM MEMBER M WHERE MEMBER_ID = ?";
-        stmt = con.createStatement();
+        stmt.setString(1, memberId);
         rs = stmt.executeQuery(sql);
 
         String findMemberId = rs.getString("MEMBER_ID");
