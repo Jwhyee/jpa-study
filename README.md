@@ -1,12 +1,20 @@
 # 자바 ORM 표준 JPA 프로그래밍(김영한 저자)
 
-## 1강(JPA 소개)
-### 1-1. SQL을 직접 다룰 때 발생하는 문제점
-관계형 데이터 베이스
-> - 관계형 데이터 베이스는 가장 대중적이고 신뢰할 만한 안전한 데이터 저장소
-> - 데이터베이스에 데이터를 관리하기 위해서는 `SQL`을 사용
->     - Java 애플리케이션은 `JDBC API`를 사용하여 `SQL`을 `DB`에 전달
-
-1. 반복적인 문제가 발생
-> `Member`, `MemberDAO`를 만든 뒤 개발을 진행하면서 느낀 것은 굉장히 번거롭다.<br>
-> 현재 Member에는 id, name을 제외한 field는 없다. 하지만 추후에 이외 필드가 추가된다면 DAO에 해당 필드들을 계속해서 추가를 해주어야 한다.
+| 챕터  | 링크                                                                      |
+|-----|-------------------------------------------------------------------------|
+| 1장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter1.md)  |
+| 2장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter2.md)  |
+| 3장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter3.md)  |
+| 4장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter4.md)  |
+| 5장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter5.md)  |
+| 6장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter6.md)  |
+| 7장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter7.md)  |
+| 8장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter8.md)  |
+| 9장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter9.md)  |
+| 10장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter10.md) |
+| 11장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter11.md) |
+| 12장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter12.md) |
+| 13장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter13.md) |
+| 14장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter14.md) |
+| 15장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter15.md) |
+| 16장 | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter16.md) |
