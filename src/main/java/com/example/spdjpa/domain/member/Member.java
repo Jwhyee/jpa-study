@@ -1,5 +1,6 @@
 package com.example.spdjpa.domain.member;
 
+import com.example.spdjpa.domain.team.Team;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,4 +9,5 @@ import lombok.Setter;
 public class Member {
     private String memberId;
     private String name;
+    private Team team;
 }
