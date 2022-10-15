@@ -21,4 +21,12 @@ public class MemberDAO {
 
         return member;
     }
+
+    public void save(Member member) throws SQLException {
+        String sql = "INSERT INTO MEMBER(MEMBER_ID, NAME) VALUES(?, ?)";
+        stmt.setString(1, member.getMemberId());
+        stmt.setString(2, member.getName());
+
+        stmt.executeUpdate(sql);
+    }
 }
