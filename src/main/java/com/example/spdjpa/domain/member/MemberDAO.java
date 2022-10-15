@@ -22,6 +22,28 @@ public class MemberDAO {
         return member;
     }
 
+    public Member findWithTeam(String memberId) throws SQLException {
+        String sql = """
+                SELECT M.MEMBER_ID, M.NAME, M.TEAM_ID, T.TEAM_NAME
+                FROM MEMBER M
+                WHERE M.MEMBER_ID = ?                
+                JOIN TEAM T
+                    ON M.TEAM_ID = T.TEAM_ID
+                """;
+
+        pstmt.setString(1, memberId);
+        rs = pstmt.executeQuery(sql);
+
+        String findMemberId = rs.getString("MEMBER_ID");
+        String findMemberName = rs.getString("NAME");
+
+        Member member = new Member();
+        member.setMemberId(findMemberId);
+        member.setName(findMemberName);
+
+        return member;
+    }
+
     public void save(Member member) throws SQLException {
         String sql = "INSERT INTO MEMBER(MEMBER_ID, NAME) VALUES(?, ?)";
         pstmt.setString(1, member.getMemberId());
