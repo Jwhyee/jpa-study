@@ -1,5 +1,7 @@
 # 자바 ORM 표준 JPA 프로그래밍(김영한 저자)
 
+<!-- https://github.com/holyeye/jpabook -->
+
 | 챕터  | 링크                                                                      |
 |-----|-------------------------------------------------------------------------|
 | 1장  | [링크](https://github.com/Jwhyee/jpa-study/blob/master/docs/chapter1.md)  |
